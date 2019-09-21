@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block style %}
+  <link href="{{ url_for('static', filename='styles/home.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="static/js/home.js" defer></script>
+{% endblock %}
+
+{% block body %}
+<div class="Menu">
+  <a id='signout' href="{{url_for('google_auth.logout')}}">Sign out</a>
+  <ul class="Menu-list" data-offset="10">
+    <a href="{{url_for('dash')}}"><li class="Menu-list-item" data-offset="20" onclick>
+      Dashboard
+      <span class="Mask"><span >Dashboard</span></span>
+      <span class="Mask"><span>Dashboard</span></span>
+    </li></a>
+    <a href="{{url_for('registerSensor')}}"><li class="Menu-list-item" data-offset="20" onclick>
+      Register Sensor
+      <span class="Mask"><span >Register Sensor</span></span>
+      <span class="Mask"><span>Register Sensor</span></span>
+    </li></a>
+    <a href="{{url_for('temp')}}"><li class="Menu-list-item" data-offset="16" onclick>
+      Temperature
+      <span class="Mask"><span>Temperature</span></span>
+      <span class="Mask"><span>Temperature</span></span>
+    </li></a>
+    <a href="{{url_for('hum')}}"><li class="Menu-list-item" data-offset="12" onclick>
+      Humidity
+      <span class="Mask"><span>Humidity</span></span>
+      <span class="Mask"><span>Humidity</span></span>
+    </li></a>
+  </ul>
+</div>
+{% endblock %}
